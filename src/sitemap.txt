@@ -53,6 +53,8 @@
     - useLocalStorage.js
   /pages
     - AuthPage.js
+    - SignUpPage.js
+    - VisitorFormSetting.js
   /services
     - api.js
   /styles

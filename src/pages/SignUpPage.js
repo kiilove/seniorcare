@@ -1,5 +1,3 @@
-// src/pages/SignUpPage.js
-
 import React, { useState } from "react";
 import { Button, Form, Input, Alert } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -32,6 +30,7 @@ const SignUpPage = () => {
           userId: user.uid, // 사용자 UID 저장
           facilityName: facilityName, // 보호시설 이름 저장
           email: user.email, // 이메일 저장
+          group: "시설관리자",
         });
 
         // 회원가입 후 대시보드로 리디렉션
@@ -67,8 +66,31 @@ const SignUpPage = () => {
         <Form.Item
           name="password"
           rules={[{ required: true, message: "비밀번호를 입력하세요!" }]}
+          hasFeedback
         >
           <Input.Password placeholder="비밀번호" />
+        </Form.Item>
+
+        {/* 비밀번호 확인 입력 */}
+        <Form.Item
+          name="confirm"
+          dependencies={["password"]}
+          hasFeedback
+          rules={[
+            { required: true, message: "비밀번호 확인을 입력하세요!" },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue("password") === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(
+                  new Error("비밀번호가 일치하지 않습니다!")
+                );
+              },
+            }),
+          ]}
+        >
+          <Input.Password placeholder="비밀번호 확인" />
         </Form.Item>
 
         {/* 보호시설 이름 입력 */}
