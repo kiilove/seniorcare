@@ -18,6 +18,7 @@ import "./styles/global.css"; // Tailwind CSS
 import "antd/dist/reset.css"; // Ant Design Reset CSS
 import SignUpPage from "./pages/SignUpPage";
 import Navbar from "./components/Navbar";
+import VisitorFormSetting from "./pages/VisitorFormSetting";
 
 // 보호된 라우트를 위한 컴포넌트
 const PrivateRoute = ({ children }) => {
@@ -123,6 +124,16 @@ const AppContent = () => {
           element={
             <PrivateRoute>
               <VisitorForm />
+            </PrivateRoute>
+          }
+        />
+
+        {/* 방문 기록 작성 설정 폼 - 보호된 라우트 */}
+        <Route
+          path="/add-visitor-setting"
+          element={
+            <PrivateRoute>
+              <VisitorFormSetting />
             </PrivateRoute>
           }
         />
