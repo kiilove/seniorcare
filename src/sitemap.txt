@@ -1,0 +1,69 @@
+/src
+  /components
+    - Auth.js                # 관리자 로그인 컴포넌트 (최고관리자 및 보호시설 관리자)
+    - VisitorForm.js         # 방문 기록 작성 폼 컴포넌트
+    - RecordList.js          # 방문 기록 목록 및 검색 컴포넌트
+    - FileUpload.js          # 파일 업로드 컴포넌트 (신분증 사진 등)
+    - AdminDashboard.js      # 관리자 대시보드 컴포넌트 (기록 관리, 통계 등)
+    - ActivityLog.js         # 관리자 활동 로그 컴포넌트
+    - Settings.js            # 관리자의 설정 컴포넌트 (비밀번호 변경, 2단계 인증 등)
+  /hooks
+    - useFireAuth.js         # 관리자 인증 관련 훅
+    - useFirestore.js        # Firestore 관련 CRUD 훅
+    - useFireStorage.js      # Firebase Storage 관련 훅
+    - useLocalStorage.js     # 로컬 스토리지 관리 훅
+  /utils
+    - functions.js           # 암호화, 데이터 처리 및 기타 유틸리티 함수
+    - validators.js          # 입력 데이터 검증 함수 (예: 전화번호 형식 검증 등)
+    - constants.js           # 앱에서 사용하는 상수 (예: 파일 크기 제한 등)
+    - analytics.js           # Firebase Analytics 및 모니터링 관련 유틸리티
+  /contexts
+    - AuthContext.js         # 인증 상태를 관리하는 Context
+    - VisitorContext.js      # 방문 기록 상태를 관리하는 Context
+  /assets                    # 프로젝트에서 사용하는 이미지, 아이콘, 스타일 파일
+  /styles                    # 전역 스타일 및 테마 설정
+    - global.css             # 글로벌 CSS 설정
+    - theme.js               # Ant Design 및 커스텀 테마 설정
+  /services
+    - api.js                 # 외부 API 통신을 처리하는 파일 (필요시)
+  - App.js                   # 메인 애플리케이션 파일
+  - index.js                 # 진입 파일
+  - firebase.js              # Firebase 초기화 및 설정 파일
+  - reportWebVitals.js       # 웹 성능 측정 파일 (필요시)
+
+
+/src
+  /assets
+    # 이미지, 아이콘, 기타 정적 파일
+  /components
+    - Auth.js
+    - AdminDashboard.js
+    - RecordList.js
+    - VisitorForm.js
+    - Settings.js
+    - ActivityLog.js
+    - FileUpload.js
+  /contexts
+    - AuthContext.js
+    - VisitorContext.js
+  /hooks
+    - useFireAuth.js
+    - useFirestore.js
+    - useFireStorage.js
+    - useLocalStorage.js
+  /pages
+    - AuthPage.js
+  /services
+    - api.js
+  /styles
+    - global.css
+    - theme.js
+  /utils
+    - functions.js
+    - validators.js
+    - constants.js
+    - analytics.js
+  - App.js
+  - index.js
+  - firebase.js
+  - reportWebVitals.js
